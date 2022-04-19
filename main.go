@@ -15,7 +15,10 @@ func main() {
 
 	portDef := ":" + *port
 
-	log.Println("Listening at", "localhost"+portDef)
+	if !*quiet {
+		log.Println("Listening at", "localhost"+portDef)
+	}
+
 	fileHandler := http.FileServer(http.Dir(*dir))
 
 	log.Fatal(http.ListenAndServe(portDef, logHandler(fileHandler, *quiet)))
