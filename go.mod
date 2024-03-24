@@ -1,3 +1,3 @@
 module github.com/masonkmeyer/serve
 
-go 1.18
+go 1.22
